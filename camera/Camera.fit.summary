@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Jun 04 17:07:56 2009
+Quartus II Version : 7.2 Build 203 02/05/2008 SP 2 SJ Full Version
+Revision Name : Camera
+Top-level Entity Name : Camera
+Family : Cyclone II
+Device : EP2C20F484C7
+Timing Models : Final
+Total logic elements : 146 / 18,752 ( < 1 % )
+    Total combinational functions : 146 / 18,752 ( < 1 % )
+    Dedicated logic registers : 67 / 18,752 ( < 1 % )
+Total registers : 67
+Total pins : 81 / 315 ( 26 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,646 @@
+Analysis & Synthesis report for Camera
+Thu Jun 04 17:07:41 2009
+Quartus II Version 7.2 Build 203 02/05/2008 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. Removed Registers Triggering Further Register Optimizations
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jun 04 17:07:40 2009         ;
+; Quartus II Version                 ; 7.2 Build 203 02/05/2008 SP 2 SJ Full Version ;
+; Revision Name                      ; Camera                                        ;
+; Top-level Entity Name              ; Camera                                        ;
+; Family                             ; Cyclone II                                    ;
+; Total logic elements               ; 146                                           ;
+;     Total combinational functions  ; 146                                           ;
+;     Dedicated logic registers      ; 67                                            ;
+; Total registers                    ; 67                                            ;
+; Total pins                         ; 81                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                          ; Camera             ; Camera             ;
+; Family name                                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+
+; Camera.vhd                       ; yes             ; User VHDL File  ; G:/mc42/eeet1256 digital design automation/project/prj/camera/Camera.vhd ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimated Total logic elements              ; 146              ;
+;                                             ;                  ;
+; Total combinational functions               ; 146              ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 60               ;
+;     -- 3 input functions                    ; 18               ;
+;     -- <=2 input functions                  ; 68               ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 84               ;
+;     -- arithmetic mode                      ; 62               ;
+;                                             ;                  ;
+; Total registers                             ; 67               ;
+;     -- Dedicated logic registers            ; 67               ;
+;     -- I/O registers                        ; 0                ;
+;                                             ;                  ;
+; I/O pins                                    ; 81               ;
+; Maximum fan-out node                        ; \clk_25:count[0] ;
+; Maximum fan-out                             ; 67               ;
+; Total fan-out                               ; 705              ;
+; Average fan-out                             ; 2.40             ;
++---------------------------------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |Camera                    ; 146 (146)         ; 67 (67)      ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |Camera             ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; VGA_MEM_BUSY                            ; Stuck at GND due to stuck port data_in ;
+; CMR_WE                                  ; Stuck at VCC due to stuck port data_in ;
+; Data[0..1]                              ; Stuck at VCC due to stuck port data_in ;
+; Data[2..3]                              ; Stuck at GND due to stuck port data_in ;
+; Data[4..5]                              ; Stuck at VCC due to stuck port data_in ;
+; Data[6..7]                              ; Stuck at GND due to stuck port data_in ;
+; Data[8..9]                              ; Stuck at VCC due to stuck port data_in ;
+; Data[10..15]                            ; Stuck at GND due to stuck port data_in ;
+; CMR_RAM_DATA[0..1]                      ; Stuck at VCC due to stuck port data_in ;
+; CMR_RAM_DATA[2..3]                      ; Stuck at GND due to stuck port data_in ;
+; CMR_RAM_DATA[4..5]                      ; Stuck at VCC due to stuck port data_in ;
+; CMR_RAM_DATA[6..7]                      ; Stuck at GND due to stuck port data_in ;
+; CMR_RAM_DATA[8..9]                      ; Stuck at VCC due to stuck port data_in ;
+; CMR_RAM_DATA[10..15]                    ; Stuck at GND due to stuck port data_in ;
+; \clk_25:count[1..30]                    ; Merged with \clk_25:count[31]          ;
+; CLOCK_25                                ; Merged with \clk_25:count[0]           ;
+; Add[0]                                  ; Merged with Address[0]                 ;
+; Add[1]                                  ; Merged with Address[1]                 ;
+; Add[2]                                  ; Merged with Address[2]                 ;
+; Add[3]                                  ; Merged with Address[3]                 ;
+; Add[4]                                  ; Merged with Address[4]                 ;
+; Add[5]                                  ; Merged with Address[5]                 ;
+; Add[6]                                  ; Merged with Address[6]                 ;
+; Add[7]                                  ; Merged with Address[7]                 ;
+; Add[8]                                  ; Merged with Address[8]                 ;
+; Add[9]                                  ; Merged with Address[9]                 ;
+; Add[10]                                 ; Merged with Address[10]                ;
+; Add[11]                                 ; Merged with Address[11]                ;
+; Add[12]                                 ; Merged with Address[12]                ;
+; Add[13]                                 ; Merged with Address[13]                ;
+; Add[14]                                 ; Merged with Address[14]                ;
+; Add[15]                                 ; Merged with Address[15]                ;
+; Add[16]                                 ; Merged with Address[16]                ;
+; Add[17]                                 ; Merged with Address[17]                ;
+; \pixel_draw:t_vgar[0..3]                ; Stuck at GND due to stuck port data_in ;
+; \pixel_draw:t_vgag[0..3]                ; Stuck at GND due to stuck port data_in ;
+; \pixel_draw:t_vgab[0..3]                ; Stuck at GND due to stuck port data_in ;
+; \clk_25:count[31]                       ; Stuck at GND due to stuck port data_in ;
+; CMR_MEM_BUSY                            ; Stuck at GND due to stuck port data_in ;
+; VGA_R[3]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_R[2]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_R[1]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_R[0]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_B[3]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_B[2]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_B[1]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_B[0]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_G[3]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_G[2]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_G[1]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_G[0]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; VGA_RAM_ADDR[17]                        ; Merged with VGA_WE                     ;
+; Total Number of Removed Registers = 110 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                    ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+; VGA_MEM_BUSY  ; Stuck at GND              ; \pixel_draw:t_vgar[3], \pixel_draw:t_vgar[2], \pixel_draw:t_vgar[1],                      ;
+;               ; due to stuck port data_in ; \pixel_draw:t_vgar[0], \pixel_draw:t_vgag[3], \pixel_draw:t_vgag[2],                      ;
+;               ;                           ; \pixel_draw:t_vgag[1], \pixel_draw:t_vgag[0], \pixel_draw:t_vgab[3],                      ;
+;               ;                           ; \pixel_draw:t_vgab[2], \pixel_draw:t_vgab[1], \pixel_draw:t_vgab[0], VGA_R[3]~reg0,       ;
+;               ;                           ; VGA_R[2]~reg0, VGA_R[1]~reg0, VGA_R[0]~reg0, VGA_B[3]~reg0, VGA_B[2]~reg0, VGA_B[1]~reg0, ;
+;               ;                           ; VGA_B[0]~reg0, VGA_G[3]~reg0, VGA_G[2]~reg0, VGA_G[1]~reg0, VGA_G[0]~reg0                 ;
+; Data[0]       ; Stuck at VCC              ; CMR_RAM_DATA[0]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[1]       ; Stuck at VCC              ; CMR_RAM_DATA[1]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[2]       ; Stuck at GND              ; CMR_RAM_DATA[2]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[3]       ; Stuck at GND              ; CMR_RAM_DATA[3]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[4]       ; Stuck at VCC              ; CMR_RAM_DATA[4]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[5]       ; Stuck at VCC              ; CMR_RAM_DATA[5]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[6]       ; Stuck at GND              ; CMR_RAM_DATA[6]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[7]       ; Stuck at GND              ; CMR_RAM_DATA[7]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[8]       ; Stuck at VCC              ; CMR_RAM_DATA[8]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[9]       ; Stuck at VCC              ; CMR_RAM_DATA[9]                                                                           ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[10]      ; Stuck at GND              ; CMR_RAM_DATA[10]                                                                          ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[11]      ; Stuck at GND              ; CMR_RAM_DATA[11]                                                                          ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[12]      ; Stuck at GND              ; CMR_RAM_DATA[12]                                                                          ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[13]      ; Stuck at GND              ; CMR_RAM_DATA[13]                                                                          ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[14]      ; Stuck at GND              ; CMR_RAM_DATA[14]                                                                          ;
+;               ; due to stuck port data_in ;                                                                                           ;
+; Data[15]      ; Stuck at GND              ; CMR_RAM_DATA[15]                                                                          ;
+;               ; due to stuck port data_in ;                                                                                           ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 67    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 65    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 42    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |Camera|hcount[31]         ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |Camera|l_count[31]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 203 02/05/2008 Service Pack 2 SJ Full Version
+    Info: Processing started: Thu Jun 04 17:07:28 2009
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Camera -c Camera
+Info: Found 2 design units, including 1 entities, in source file Camera.vhd
+    Info: Found design unit 1: Camera-behaviour
+    Info: Found entity 1: Camera
+Info: Elaborating entity "Camera" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Camera.vhd(43): object "Data1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Camera.vhd(43): object "Data2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Camera.vhd(56): object "data_in_ram" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at Camera.vhd(359): signal "SRAM_CE_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(360): signal "SRAM_OE_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(361): signal "SRAM_UB_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(362): signal "SRAM_LB_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(364): signal "CMR_MEM_BUSY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(365): signal "CMR_WE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(368): signal "CMR_RAM_DATA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(373): signal "SRAM_DQ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(375): signal "VGA_MEM_BUSY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(376): signal "VGA_WE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(379): signal "VGA_RAM_DATA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Camera.vhd(384): signal "SRAM_DQ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Camera.vhd(357): inferring latch(es) for signal or variable "SRAM_WE_N", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Camera.vhd(357): inferring latch(es) for signal or variable "SRAM_ADDR", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Camera.vhd(357): inferring latch(es) for signal or variable "SRAM_DQ", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Camera.vhd(357): inferring latch(es) for signal or variable "VGA_RAM_DATA", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "VGA_RAM_DATA[0]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[1]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[2]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[3]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[4]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[5]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[6]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[7]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[8]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[9]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[10]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[11]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[12]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[13]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[14]" at Camera.vhd(357)
+Info (10041): Inferred latch for "VGA_RAM_DATA[15]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[0]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[1]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[2]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[3]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[4]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[5]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[6]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[7]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[8]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[9]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[10]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[11]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[12]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[13]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[14]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_DQ[15]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[0]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[1]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[2]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[3]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[4]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[5]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[6]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[7]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[8]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[9]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[10]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[11]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[12]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[13]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[14]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[15]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[16]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_ADDR[17]" at Camera.vhd(357)
+Info (10041): Inferred latch for "SRAM_WE_N" at Camera.vhd(357)
+Warning (14130): Reduced register "VGA_MEM_BUSY" with stuck data_in port to stuck value GND
+Info: Power-up level of register "CMR_WE" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "CMR_WE" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "Data[0]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "Data[0]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "Data[1]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "Data[1]" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "Data[2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Data[3]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "Data[4]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "Data[4]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "Data[5]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "Data[5]" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "Data[6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Data[7]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "Data[8]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "Data[8]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "Data[9]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "Data[9]" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "Data[10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Data[11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Data[12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Data[13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Data[14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "Data[15]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "CMR_RAM_DATA[0]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "CMR_RAM_DATA[0]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "CMR_RAM_DATA[1]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "CMR_RAM_DATA[1]" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "CMR_RAM_DATA[2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_RAM_DATA[3]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "CMR_RAM_DATA[4]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "CMR_RAM_DATA[4]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "CMR_RAM_DATA[5]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "CMR_RAM_DATA[5]" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "CMR_RAM_DATA[6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_RAM_DATA[7]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "CMR_RAM_DATA[8]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "CMR_RAM_DATA[8]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "CMR_RAM_DATA[9]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "CMR_RAM_DATA[9]" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "CMR_RAM_DATA[10]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_RAM_DATA[11]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_RAM_DATA[12]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_RAM_DATA[13]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_RAM_DATA[14]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_RAM_DATA[15]" with stuck data_in port to stuck value GND
+Warning: LATCH primitive "VGA_RAM_DATA[13]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[12]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[11]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[10]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[9]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[8]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[7]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[6]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[5]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[4]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[3]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[2]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[1]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[0]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[15]" is permanently disabled
+Warning: LATCH primitive "VGA_RAM_DATA[14]" is permanently disabled
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "\clk_25:count[26]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[22]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[14]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[29]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[28]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[27]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[25]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[24]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[23]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[21]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[20]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[19]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[18]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[17]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[16]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[15]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[13]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[12]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[11]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[9]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[10]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[8]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[7]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[5]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[4]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[3]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[1]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[30]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[6]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "\clk_25:count[2]" merged to single register "\clk_25:count[31]"
+    Info: Duplicate register "CLOCK_25" merged to single register "\clk_25:count[0]"
+    Info: Duplicate register "Add[0]" merged to single register "Address[0]"
+    Info: Duplicate register "Add[1]" merged to single register "Address[1]"
+    Info: Duplicate register "Add[2]" merged to single register "Address[2]"
+    Info: Duplicate register "Add[3]" merged to single register "Address[3]"
+    Info: Duplicate register "Add[4]" merged to single register "Address[4]"
+    Info: Duplicate register "Add[5]" merged to single register "Address[5]"
+    Info: Duplicate register "Add[6]" merged to single register "Address[6]"
+    Info: Duplicate register "Add[7]" merged to single register "Address[7]"
+    Info: Duplicate register "Add[8]" merged to single register "Address[8]"
+    Info: Duplicate register "Add[9]" merged to single register "Address[9]"
+    Info: Duplicate register "Add[10]" merged to single register "Address[10]"
+    Info: Duplicate register "Add[11]" merged to single register "Address[11]"
+    Info: Duplicate register "Add[12]" merged to single register "Address[12]"
+    Info: Duplicate register "Add[13]" merged to single register "Address[13]"
+    Info: Duplicate register "Add[14]" merged to single register "Address[14]"
+    Info: Duplicate register "Add[15]" merged to single register "Address[15]"
+    Info: Duplicate register "Add[16]" merged to single register "Address[16]"
+    Info: Duplicate register "Add[17]" merged to single register "Address[17]"
+Warning (14130): Reduced register "\pixel_draw:t_vgar[3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgar[2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgar[1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgar[0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgag[3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgag[2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgag[1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgag[0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgab[3]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgab[2]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgab[1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\pixel_draw:t_vgab[0]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "\clk_25:count[31]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "CMR_MEM_BUSY" with stuck data_in port to stuck value GND
+Warning: LATCH primitive "SRAM_WE_N$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[17]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[16]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[15]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[14]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[13]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[12]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[11]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[10]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[9]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[8]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[7]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[6]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[5]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[4]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[3]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[2]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[1]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[0]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_DQ[15]_3478" is permanently disabled
+Warning (14130): Reduced register "VGA_R[3]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_R[2]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_R[1]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_R[0]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_B[3]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_B[2]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_B[1]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_B[0]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_G[3]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_G[2]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_G[1]~reg0" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "VGA_G[0]~reg0" with stuck data_in port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "VGA_RAM_ADDR[17]" merged to single register "VGA_WE", power-up level changed
+Warning: LATCH primitive "SRAM_ADDR[17]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[16]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[15]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[14]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[13]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[12]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[11]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[10]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[9]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[8]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[7]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[6]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[5]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[4]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[3]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[2]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[1]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_ADDR[0]$latch" is permanently disabled
+Warning: LATCH primitive "SRAM_DQ[15]_3478" is permanently disabled
+Warning: LATCH primitive "SRAM_WE_N$latch" is permanently disabled
+Warning: Replaced VCC or GND feeding tri-state bus SRAM_CE_N~0 with an always-enabled tri-state buffer
+Warning: Replaced VCC or GND feeding tri-state bus SRAM_OE_N~0 with an always-enabled tri-state buffer
+Warning: Replaced VCC or GND feeding tri-state bus SRAM_WE_N~1 with an always-enabled tri-state buffer
+Warning: Replaced VCC or GND feeding tri-state bus SRAM_UB_N~0 with an always-enabled tri-state buffer
+Warning: Replaced VCC or GND feeding tri-state bus SRAM_LB_N~0 with an always-enabled tri-state buffer
+Warning: TRI or OPNDRN buffers permanently disabled
+    Warning: Node "SRAM_DQ[0]~31"
+    Warning: Node "SRAM_DQ[1]~29"
+    Warning: Node "SRAM_DQ[4]~23"
+    Warning: Node "SRAM_DQ[5]~21"
+    Warning: Node "SRAM_DQ[8]~15"
+    Warning: Node "SRAM_DQ[9]~13"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_B[0]" stuck at GND
+    Warning (13410): Pin "VGA_B[1]" stuck at GND
+    Warning (13410): Pin "VGA_B[2]" stuck at GND
+    Warning (13410): Pin "VGA_B[3]" stuck at GND
+    Warning (13410): Pin "VGA_R[0]" stuck at GND
+    Warning (13410): Pin "VGA_R[1]" stuck at GND
+    Warning (13410): Pin "VGA_R[2]" stuck at GND
+    Warning (13410): Pin "VGA_R[3]" stuck at GND
+    Warning (13410): Pin "VGA_G[0]" stuck at GND
+    Warning (13410): Pin "VGA_G[1]" stuck at GND
+    Warning (13410): Pin "VGA_G[2]" stuck at GND
+    Warning (13410): Pin "VGA_G[3]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[0]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[1]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[2]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[3]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[4]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[5]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[6]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[7]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[8]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[9]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[10]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[11]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[12]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[13]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[14]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[15]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[16]" stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[17]" stuck at GND
+Warning: Design contains 20 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Y[0]"
+    Warning (15610): No output dependent on input pin "Y[1]"
+    Warning (15610): No output dependent on input pin "Y[2]"
+    Warning (15610): No output dependent on input pin "Y[3]"
+    Warning (15610): No output dependent on input pin "Y[4]"
+    Warning (15610): No output dependent on input pin "Y[5]"
+    Warning (15610): No output dependent on input pin "Y[6]"
+    Warning (15610): No output dependent on input pin "Y[7]"
+    Warning (15610): No output dependent on input pin "UV[0]"
+    Warning (15610): No output dependent on input pin "UV[1]"
+    Warning (15610): No output dependent on input pin "UV[2]"
+    Warning (15610): No output dependent on input pin "UV[3]"
+    Warning (15610): No output dependent on input pin "UV[4]"
+    Warning (15610): No output dependent on input pin "UV[5]"
+    Warning (15610): No output dependent on input pin "UV[6]"
+    Warning (15610): No output dependent on input pin "UV[7]"
+    Warning (15610): No output dependent on input pin "FODD"
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+Info: Implemented 227 device resources after synthesis - the final resource count might be different
+    Info: Implemented 25 input pins
+    Info: Implemented 35 output pins
+    Info: Implemented 21 bidirectional pins
+    Info: Implemented 146 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 199 warnings
+    Info: Allocated 173 megabytes of memory during processing
+    Info: Processing ended: Thu Jun 04 17:07:42 2009
+    Info: Elapsed time: 00:00:14
+
+

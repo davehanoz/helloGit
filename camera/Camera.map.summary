@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jun 04 17:07:40 2009
+Quartus II Version : 7.2 Build 203 02/05/2008 SP 2 SJ Full Version
+Revision Name : Camera
+Top-level Entity Name : Camera
+Family : Cyclone II
+Total logic elements : 146
+    Total combinational functions : 146
+    Dedicated logic registers : 67
+Total registers : 67
+Total pins : 81
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
